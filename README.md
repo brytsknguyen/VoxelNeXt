@@ -1,3 +1,46 @@
+# Customizaion to install Installing VoxelNext
+
+Create conda environment with python 3.8.10, and install torch 2.0.0 cu118 and torchvision torch audio
+conda create voxelnext python==3.8.10
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+Make sure the version installed is correct as follows:
+
+Clone the needed repos
+
+```
+git clone https://github.com/dvlab-research/VoxelNeXt
+git clone https://github.com/open-mmlab/OpenPCDet.git 
+```
+
+Install some dependencies that may be requested along the way
+
+```
+pip install matplotlib av2 kornia pyquaternion cachetools motmetrics SharedArray
+```
+
+Install the spconv for cuda 11.8
+
+```
+pip install spconv-cu118
+```
+
+Install openpcdet (shortened as pcdet):
+
+```
+export CUDA_VERSION=cuda-11.8
+export PATH=/usr/local/$CUDA_VERSION/bin:$PATH
+export CUDA_PATH=/usr/local/$CUDA_VERSION
+export CUDA_HOME=/usr/local/$CUDA_VERSION
+export LD_LIBRARY_PATH=/usr/local/$CUDA_VERSION/lib64:$LD_LIBRARY_PATH
+cd ~/ml_ws/OpenPCDet
+python setup.py develop
+```
+
+Copy pretrained model at:
+https://github.com/dvlab-research/VoxelNeXt#experimental-results
+
+# Original Content
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/voxelnext-fully-sparse-voxelnet-for-3d-object-1/3d-object-detection-on-argoverse2)](https://paperswithcode.com/sota/3d-object-detection-on-argoverse2?p=voxelnext-fully-sparse-voxelnet-for-3d-object-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/voxelnext-fully-sparse-voxelnet-for-3d-object-1/3d-multi-object-tracking-on-nuscenes-lidar)](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes-lidar?p=voxelnext-fully-sparse-voxelnet-for-3d-object-1)
 
