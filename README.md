@@ -1,9 +1,16 @@
 # Customization to Installing VoxelNext on 20.04 and latest torch
 
 Create conda environment with python 3.8.10, and install torch 2.0.0 cu118 and torchvision torch audio
+
+```
 conda create voxelnext python==3.8.10
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
 Make sure the version installed is correct as follows:
+
+![image](https://user-images.githubusercontent.com/13504903/235879930-e1350561-9f83-4438-84e5-6045ed69e94b.png)
+
 
 Clone the needed repos
 
